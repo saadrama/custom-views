@@ -3,9 +3,10 @@ package com.example.customlistview2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
+import android.widget.Toast
 
 
-        class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
             override fun onCreate(savedInstanceState: Bundle?) {
                 super.onCreate(savedInstanceState)
                 setContentView(R.layout.activity_main)
@@ -33,6 +34,13 @@ import android.widget.ListView
                 val myListView = findViewById<ListView>(R.id.mylistview)
                 myListView.adapter = CustomAdapter(this,myListdata)
 
+                myListView.setOnItemClickListener { parent, view, position, id ->
+
+                    if (position==0)
+                    {
+                        Toast.makeText(this,"Tapped", Toast.LENGTH_LONG).show()
+                    }
+                }
 
 
             }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 
 
 class CustomAdapter(val ctx: Context, val myDataList: List<MyData>): BaseAdapter() {
@@ -37,6 +38,13 @@ class CustomAdapter(val ctx: Context, val myDataList: List<MyData>): BaseAdapter
         imageItem?.setImageResource(currentItem.image)
         titleItem?.text = currentItem.title
         descItem?.text = currentItem.desc
+
+      /*  myConverterView?.tag= position
+        myConverterView?.setOnClickListener { view-> }
+
+           val clickedPosition=view.tag as Int
+           val clickedItem=getItem(clickedPosition)
+        Toast.makeText(ctx, "You have clicked")*/
 
         return myConverterView!!
     }
